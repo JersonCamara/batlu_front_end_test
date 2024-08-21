@@ -14,7 +14,7 @@ type Props = {
 export const CartContext = createContext<Props | undefined>(undefined);
 
 export const CartProvider = ({children}: {children: React.ReactNode}) => {
-    const [cart, setCart] = useState<ProductType[]>([]);
+    const [cart, setCart] = useState<ProductType[]>([productsDB[0], productsDB[5]]);
 	const [products, setProducts] = useState(productsDB);
 
     const props = {
