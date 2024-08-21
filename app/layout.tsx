@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Saira } from "next/font/google";
 import "./globals.css";
 import HeaderComponent from "./components/header_component/header_component";
+import Providers from "./components/providers/providers";
 
 const inter = Saira({ subsets: ["latin"] });
 
@@ -18,8 +19,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} bg-primary-color`}>
-        <HeaderComponent />
-        {children}
+        <Providers>
+          <HeaderComponent />
+          {children}
+        </Providers>
       </body>
     </html>
   );
